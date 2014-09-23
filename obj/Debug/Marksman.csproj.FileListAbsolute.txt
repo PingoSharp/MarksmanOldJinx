@@ -1,0 +1,15 @@
+C:\Users\anGelo\AppData\Roaming\LeagueSharp\Repositories\1BA0420E\trunk\Marksman\bin\Release\Marksman.exe.config
+C:\Users\anGelo\Desktop\Marksman\bin\Release\Marksman.exe.config
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\MarksmanOldJinx.exe.config
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\MarksmanOldJinx.exe
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\MarksmanOldJinx.pdb
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\LeagueSharp.Common.dll
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\LeagueSharp.dll
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\SharpDX.dll
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\bin\Release\LeagueSharp.xml
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\obj\Debug\Marksman.csprojResolveAssemblyReference.cache
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\obj\Debug\Marksman.Properties.Resources.resources
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\obj\Debug\Marksman.csproj.GenerateResource.Cache
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\obj\Debug\MarksmanOldJinx.exe
+C:\Users\anGelo\Documents\GitHub\MarksmanOldJinx\obj\Debug\MarksmanOldJinx.pdb
