@@ -231,7 +231,10 @@ namespace Marksman
                     {
                         if (ObjectManager.Player.GetSpellDamage(t, SpellSlot.R, 1) - 20 > t.Health)
                         {
-                            if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
+                            if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) 
+                            {
+                                return;
+                            }
                         }
                     }
                     else if (checkRok && distance > minR)
@@ -248,7 +251,10 @@ namespace Marksman
                                 if (rDamage - 20 > t.Health && !ObjectManager.Player.IsAutoAttacking &&
                                     !ObjectManager.Player.IsChanneling)
                                 {
-                                    if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
+                                    if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) 
+                                    {
+                                        return;
+                                    }
                                 }
                             }
                         }
@@ -260,7 +266,10 @@ namespace Marksman
                                 if (rDamage > t.Health && !ObjectManager.Player.IsAutoAttacking &&
                                     !ObjectManager.Player.IsChanneling)
                                 {
-                                    if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
+                                    if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) 
+                                    {
+                                        return;
+                                    }
                                 }
                             }
                         }
