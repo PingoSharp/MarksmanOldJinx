@@ -137,7 +137,7 @@ namespace Marksman
 
                 if (target.IsValidTarget())
                 {
-                    if (DamageLib.getDmg(target, DamageLib.SpellType.R, DamageLib.StageType.FirstDamage) > target.Health)
+                    if (ObjectManager.Player.GetSpellDamage(target, SpellSlot.R, 1) - 20 > target.Health)
                     {
                         R.Cast(target, false, true);
                     }
@@ -229,29 +229,26 @@ namespace Marksman
 
                     if (!checkRok)
                     {
-                        if (DamageLib.getDmg(t, DamageLib.SpellType.R, DamageLib.StageType.FirstDamage) > t.Health)
+                        if (ObjectManager.Player.GetSpellDamage(t, SpellSlot.R, 1) - 20 > t.Health)
                         {
                             if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
                         }
                     }
                     else if (checkRok && distance > minR)
                     {
-                        var aDamage = DamageLib.getDmg(t, DamageLib.SpellType.AD);
-                        var wDamage = DamageLib.getDmg(t, DamageLib.SpellType.W, DamageLib.StageType.FirstDamage);
-                        var rDamage = DamageLib.getDmg(t, DamageLib.SpellType.R, DamageLib.StageType.FirstDamage);
+                        var aDamage = ObjectManager.Player.GetAutoAttackDamage(t);
+                        var wDamage = ObjectManager.Player.GetSpellDamage(t, SpellSlot.W, 1);
+                        var rDamage = ObjectManager.Player.GetSpellDamage(t, SpellSlot.R, 1);
                         var powPowRange = GetRealPowPowRange(t);
 
                         if (distance < (powPowRange + QAddRange) && !(aDamage * 3.5 > t.Health))
                         {
                             if (!W.IsReady() || !(wDamage > t.Health) || W.GetPrediction(t).CollisionObjects.Count > 0)
                             {
-                                if (CountAlliesNearTarget(t, 500) <= 3)
+                                if (rDamage - 20 > t.Health && !ObjectManager.Player.IsAutoAttacking &&
+                                    !ObjectManager.Player.IsChanneling)
                                 {
-                                    if (rDamage > t.Health && !ObjectManager.Player.IsAutoAttacking &&
-                                        !ObjectManager.Player.IsChanneling)
-                                    {
-                                        if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
-                                    }
+                                    if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
                                 }
                             }
                         }
@@ -260,13 +257,10 @@ namespace Marksman
                             if (!W.IsReady() || !(wDamage > t.Health) || distance > W.Range ||
                                 W.GetPrediction(t).CollisionObjects.Count > 0)
                             {
-                                if (CountAlliesNearTarget(t, 500) <= 3)
+                                if (rDamage > t.Health && !ObjectManager.Player.IsAutoAttacking &&
+                                    !ObjectManager.Player.IsChanneling)
                                 {
-                                    if (rDamage > t.Health && !ObjectManager.Player.IsAutoAttacking &&
-                                        !ObjectManager.Player.IsChanneling)
-                                    {
-                                        if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
-                                    }
+                                    if (R.Cast(t, false, true) == Spell.CastStates.SuccessfullyCasted) { }
                                 }
                             }
                         }
